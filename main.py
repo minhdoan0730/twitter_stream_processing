@@ -97,16 +97,6 @@ if __name__ == "__main__":
 
     hashtags.foreachRDD(process)
 
-    # Create an sql context so that we can query data files in sql
-    # data_src = DataSource(data_dir, data_filename)
-    # df = sql_context.read.load(
-    #     data_src.get_path(),
-    #     format='com.databricks.spark.csv',
-    #     header='true',
-    #     inferSchema='true'
-    # )
-    # hashtags_count_in_tweets(df)
-
     # You must start the Spark StreamingContext, and await process termination
     ssc.start()
     ssc.awaitTermination()
